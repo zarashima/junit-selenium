@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import io.github.bonigarcia.seljup.SeleniumExtension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,7 +20,7 @@ public class TodoMvcTest {
     private final WebDriver driver;
     private TodoMvc todoMvc;
 
-    public TodoMvcTest(WebDriver driver) {
+    public TodoMvcTest(ChromeDriver driver) {
         this.driver = driver;
         this.todoMvc = PageFactory.initElements(driver, TodoMvcPage.class);
         this.todoMvc.navigateTo();
